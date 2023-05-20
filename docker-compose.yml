@@ -1,0 +1,11 @@
+version: "2.0"
+
+services:
+  trade-manager:
+    build: .
+    image: trade-manager:v1
+    environment:
+      - TRADE_MANAGER_PORT=10000
+    ports:
+      - "10000:10000"
+    container_name: my-trade-manager-v1

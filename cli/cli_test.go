@@ -7,8 +7,9 @@ import (
 	"testing"
 )
 
-//const host = "http://47.57.95.94:10000"
-const host = "http://127.0.0.1:10000"
+const host = "http://47.57.95.94:10000"
+
+//const host = "http://127.0.0.1:10000"
 
 func TestCliStrategyRegister(t *testing.T) {
 	c := NewClient(host)
@@ -19,7 +20,7 @@ func TestCliStrategyRegister(t *testing.T) {
 
 	register, err := c.StrategyRegister(&req)
 	if err != nil {
-		return
+		panic(err)
 	}
 	fmt.Println(register)
 

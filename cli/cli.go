@@ -22,7 +22,7 @@ func NewClient(host string) *Client {
 }
 
 func (a *Client) StrategyRegister(param *handler.StrategyRequest) (*handler.StrategyResponse, error) {
-	api := "/StrategyHandler"
+	api := "/StrategyRegister"
 	req, _ := http.NewRequest("GET", a.Host+api+fmt.Sprintf("?StrategyName=%s", param.Name), nil)
 
 	resp, err := a.c.Do(req)

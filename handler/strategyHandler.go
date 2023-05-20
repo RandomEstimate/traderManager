@@ -2,7 +2,7 @@ package handler
 
 import (
 	"fmt"
-	"github/RandomEstimate/traderManager/mysqlManager"
+	"github.com/RandomEstimate/traderManager/mysqlManager"
 	"net/http"
 )
 

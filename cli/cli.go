@@ -3,10 +3,10 @@ package cli
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/RandomEstimate/traderManager/handler"
 	"io/ioutil"
 	"net/http"
 	"strings"
-	"traderManager/handler"
 )
 
 type Client struct {
@@ -21,7 +21,7 @@ func NewClient(host string) *Client {
 	}
 }
 
-func (a *Client) StrategyRegister(param *handler.StrategyRegisterRequest) (*handler.StrategyRegisterResponse, error) {
+func (a *Client) StrategyRegister(param *handler.StrategyRequest) (*handler.StrategyResponse, error) {
 	api := "/StrategyHandler"
 	req, _ := http.NewRequest("GET", a.Host+api+fmt.Sprintf("?StrategyName=%s", param.Name), nil)
 
@@ -30,7 +30,7 @@ func (a *Client) StrategyRegister(param *handler.StrategyRegisterRequest) (*hand
 		return nil, err
 	}
 	buf, _ := ioutil.ReadAll(resp.Body)
-	d := &handler.StrategyRegisterResponse{}
+	d := &handler.StrategyResponse{}
 	err = json.Unmarshal(buf, d)
 	if err != nil {
 		return nil, err
@@ -38,7 +38,7 @@ func (a *Client) StrategyRegister(param *handler.StrategyRegisterRequest) (*hand
 	return d, nil
 }
 
-func (a *Client) StrategyDelete(param *handler.StrategyRegisterRequest) (*handler.StrategyRegisterResponse, error) {
+func (a *Client) StrategyDelete(param *handler.StrategyRequest) (*handler.StrategyResponse, error) {
 	api := "/StrategyDelete"
 	req, _ := http.NewRequest("GET", a.Host+api+fmt.Sprintf("?StrategyName=%s", param.Name), nil)
 
@@ -47,7 +47,7 @@ func (a *Client) StrategyDelete(param *handler.StrategyRegisterRequest) (*handle
 		return nil, err
 	}
 	buf, _ := ioutil.ReadAll(resp.Body)
-	d := &handler.StrategyRegisterResponse{}
+	d := &handler.StrategyResponse{}
 	err = json.Unmarshal(buf, d)
 	if err != nil {
 		return nil, err

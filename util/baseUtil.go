@@ -3,8 +3,8 @@ package util
 import (
 	"context"
 	"fmt"
+	"github.com/RandomEstimate/traderManager/mysqlManager"
 	"github.com/adshao/go-binance/v2/futures"
-	"github/RandomEstimate/traderManager/mysqlManager"
 	"strconv"
 )
 

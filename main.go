@@ -2,14 +2,14 @@ package main
 
 import (
 	"flag"
+	"github/RandomEstimate/traderManager/util"
 	"log"
 	"net/http"
 	"strconv"
 	"time"
-	"traderManager/util"
 )
-import "traderManager/mysqlManager"
-import "traderManager/handler"
+import "github/RandomEstimate/traderManager/mysqlManager"
+import "github/RandomEstimate/traderManager/handler"
 
 func main() {
 	var path string

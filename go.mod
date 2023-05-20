@@ -1,4 +1,4 @@
-module traderManager
+module github/RandomEstimate/traderManager
 
 go 1.18
 

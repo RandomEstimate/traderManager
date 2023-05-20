@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 	"github.com/adshao/go-binance/v2/futures"
+	"github/RandomEstimate/traderManager/mysqlManager"
 	"strconv"
-	"traderManager/mysqlManager"
 )
 
 type Stat struct {
